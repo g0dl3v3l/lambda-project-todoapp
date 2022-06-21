@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <title>Todoist</title>
+  </head>
+  <body>
+    <!-- TOP NAVIGATION -->
+    <nav>
+      <p class="welcome">Log in to get started</p>
+      <img src="static/logo.png" alt="Logo" class="logo" />
+
+      <form action="" class="login">
+        <input
+          type="text"
+          placeholder="user"
+          class="login__input login__input--user"
+        />
+        <input
+          type="text"
+          placeholder="PIN"
+          maxlength="4"
+          class="login__input login__input--pin"
+        />
+        <button class="login__btn">&rarr;</button>
+      </form>
+    </nav>
+
+    <main class="app">
+      <!-- TASKS -->
+      <div class="tasks">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+        {% block content %}{% endblock %}
+        
+        <!-- <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 3</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div>
+        <div class="task">
+          <div class="task__discription">This is task 2</div>
+          <div class="task__time--end">19/06/2022</div>
+        </div> -->
+      </div>
+
+      <!-- OPERATION: TASK -->
+      <div class="operation operation--task">
+        <h2>Task</h2>
+        <form  method = "POST" action="" class="form form--task" >
+          <input
+            type="text"
+            id="task"
+            class="form__input form__input--discription"
+            name ="taskdes"
+            >
+          
+          <!-- <input type="text" id ="task"  class="form__input form__input--discription" name="taskdes">  -->
+          <label class="form__label" for="task">Task Discription</label>
+        
+          <input type="date" id="date" class="form__input form__input--date"  name ="date">
+          <label class="form__label" for="date">Date</label>
+          <!-- <input class="form__btn form__btn--close" type = "submit">&rarr;</input> -->
+          <button class="form__btn form__btn--close" >&rarr;</button> 
+        </form>
+      </div>
+
+      <!-- OPERATION: CLOSE -->
+      <div class="operation operation--close">
+        <h2>Close account</h2>
+        <form class="form form--close">
+          <input type="text" class="form__input form__input--user" />
+          <label class="form__label">Confirm user</label>
+          <input
+            type="password"
+            maxlength="6"
+            class="form__input form__input--pin"
+          />
+          <label class="form__label">Confirm PIN</label>
+          <button class="form__btn form__btn--close">&rarr;</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

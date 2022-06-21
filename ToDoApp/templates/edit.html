@@ -1,0 +1,28 @@
+{%extends 'index.html'%}
+
+    {% block content %}
+        <div class="task">
+            <form  method = "POST" action="" class="form form--task" >
+            {{ form.hidden_tag() }}
+           
+            {{ form.edittask(class="form__input form__input--discription") }}
+
+
+
+            
+
+
+            
+           
+
+            <input type="date" name ="taskdate" class = "form__input form__input--date" value ="{{editTasks.date}}">
+           
+
+            
+            {{ form.submit(class="form__btn form__btn--close" ) }}
+
+            
+
+        </form>
+        </div>
+    {%endblock content%}

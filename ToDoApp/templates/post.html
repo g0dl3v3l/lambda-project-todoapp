@@ -1,0 +1,16 @@
+{%extends 'index.html'%}
+
+        {% block content %}
+            
+            {%for post in display%}
+                <div class="task">
+                  <a href="{{url_for('displaypage', taskdata_id = post.id)}}"  class="task__discription"><div >{{post.taskdes}}</div></a>
+                    <div class="task__time--end">{{post.date}}</div>
+                    
+                </div>
+            {%endfor%}
+        {%endblock content%}
+
+
+           
+        

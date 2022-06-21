@@ -1,0 +1,14 @@
+{%extends 'index.html'%}
+
+    {% block content %}
+        
+        <div class="task">
+            <div class="task__discription" >{{editTask.taskdes}}</div>
+            <div class="task__time--end">{{editTask.date}}</div>
+            <a href = "{{url_for('edit' ,taskdata_id = editTask.id )}}">update</a>
+            <a href = "{{url_for('delete' ,taskdata_id = editTask.id )}}">delete</a>
+
+        </div>
+     
+           
+    {%endblock content%}
