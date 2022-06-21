@@ -1,4 +1,4 @@
-from ToDoApp.__init__ import app
+from ToDoApp import app as application
 
 if __name__ == '__main__':
     app.run()
