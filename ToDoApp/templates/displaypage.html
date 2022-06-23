@@ -1,14 +1,21 @@
+<!-- This page displays the task selected for updation or deletion 
+         End point associated : displaypage , edit and delete -->
+
+
 {%extends 'index.html'%}
 
     {% block content %}
-        
+        <!--This block displays the tasks-->
         <div class="task">
             <div class="task__discription" >{{editTask.taskdes}}</div>
             <div class="task__time--end">{{editTask.date}}</div>
-            <a href = "{{url_for('edit' ,taskdata_id = editTask.id )}}">update</a>
-            <a href = "{{url_for('delete' ,taskdata_id = editTask.id )}}">delete</a>
-
+            <div>
+            <a class="task--update" href = "{{url_for('edit' ,taskdata_id = editTask.id )}}">update</a>
+            <a class="task--delete" href = "{{url_for('delete' ,taskdata_id = editTask.id )}}">delete</a>
+            </div>
         </div>
-     
-           
+        
+
+        <!-- this block takes the task discription-->
+      
     {%endblock content%}

@@ -1,16 +1,44 @@
-{%extends 'index.html'%}
 
-        {% block content %}
+<!-- It displays all the tasks of the current user logined
+
+    End points associated : home ,add_tasks, display_task -->
+
+    {%extends 'index.html'%}
+
+    
+    {% block content %}
+        {%for post in display%}
+            <div class="task">
+              <a href="{{url_for('displaypage', taskdata_id = post.id)}}"  class="task__discription"><div >{{post.taskdes}}</div></a>
+                <div class="task__time--end">{{post.date}}</div>   
+            </div>
+        {%endfor%}
+
+    
+
+
+{%endblock content%}
+   
+    {%block task%}
+        <div class="operation operation--task">
             
-            {%for post in display%}
-                <div class="task">
-                  <a href="{{url_for('displaypage', taskdata_id = post.id)}}"  class="task__discription"><div >{{post.taskdes}}</div></a>
-                    <div class="task__time--end">{{post.date}}</div>
-                    
-                </div>
-            {%endfor%}
-        {%endblock content%}
+            <h2>Schedule Task</h2>
+            <form action="" class="form form--task" method="POST">
+            <input
+                type="text"
+                id="task"
+                class="form__input form__input--discription"
+                name ="taskdes"
+                required
+            />
+            <label class="form__label" for="task">Task Discription</label>
 
+            <input type="date" id="date" class="form__input form__input--date" name ="date"  required/>
 
-           
-        
+            <button class="form__btn form__btn--task">&rarr;</button>
+            </form>
+        </div>
+      {%endblock task%}
+
+       
+    

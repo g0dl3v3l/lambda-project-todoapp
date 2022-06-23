@@ -1,25 +1,21 @@
+<!-- THis page displays the task updation window  End point associated : edit -->
+
 {%extends 'index.html'%}
 
     {% block content %}
-        <div class="task">
+        <div class="task__edit">
             <form  method = "POST" action="" class="form form--task" >
             {{ form.hidden_tag() }}
            
-            {{ form.edittask(class="form__input form__input--discription") }}
+            {{ form.edittask(class="task__update form__input form__input--discription") }}
 
 
-
-            
-
-
-            
-           
 
             <input type="date" name ="taskdate" class = "form__input form__input--date" value ="{{editTasks.date}}">
            
 
             
-            {{ form.submit(class="form__btn form__btn--close" ) }}
+            {{ form.submit(class="task--update form__btn form__btn--close" ) }}
 
             
 

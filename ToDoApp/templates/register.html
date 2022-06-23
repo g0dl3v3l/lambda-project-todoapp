@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_register.css') }}" />
+    <title>SignUP </title>
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <main class="container">
+        <form class = "loginForm" method = "POST">
+        {{ form.hidden_tag() }}
+        <p>Create new account</p>
+        <!-- <input type="email" placeholder="Email" required> -->
+        {{ form.email(class="form__input--discription", placeholder="Email") }}
+
+       
+
+        {{ form.username(class="form__input--discription" , placeholder ="Username") }}
+
+        <!-- <input class="username"
+        type = "text" 
+        placeholder = "Username"
+        required
+        /> -->
+
+
+
+        <!-- <input 
+        class="username"
+        type = "password" 
+        placeholder = "Password"
+        minlength="4"
+        required
+        /> -->
+
+        
+        {{ form.password(class="form__input--discription" , placeholder="Password") }}
+        <!-- <button class="button">Sign up</button> -->
+
+        {{ form.submit(class="form__btn--close") }}
+        </div>
+        </form>
+</main>
+</body>
+    
+
+</body>
+</html>

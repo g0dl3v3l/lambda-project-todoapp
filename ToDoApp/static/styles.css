@@ -9,16 +9,23 @@ html {
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  color: #333;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
+  transition: all 1s;
   padding: 2rem;
 }
 
+
 nav {
-  max-width: 150rem;
+  max-width: 120rem;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
@@ -29,6 +36,7 @@ nav {
 .welcome {
   font-size: 1.9rem;
   font-weight: 500;
+  display: inline;
 }
 
 .logo {
@@ -70,25 +78,32 @@ nav {
 }
 
 .app {
-  max-width: 135rem;
+  max-width: 70rem;
   margin: 10rem auto;
-  display: grid;
-  grid-template-columns: 4.5fr 2fr;
-  gap: 2rem;
-  grid-template-rows: repeat(4, 15rem);
+  display: flex;
+  flex-direction: column;
+  transition: all 1s;
+  gap: 5rem;
 }
 
 .tasks {
-  grid-row: 1 / span 4;
+  order: 2;
   background-color: #fff;
   border-radius: 1rem;
   overflow: scroll;
+  height: 50vh;
 }
 .task {
-  display: flex;
   justify-content: space-between;
   padding: 2.25rem 4rem;
   display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.task__edit{
+  justify-content: space-between;
+  padding: 2.25rem 4rem;
   align-items: center;
   border-bottom: 1px solid #eee;
 }
@@ -101,8 +116,8 @@ nav {
   margin-right: 2rem;
 }
 
-.task__date {
-  font-size: 1.1rem;
+.task__time--end {
+  font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: 500;
   color: #666;
@@ -114,30 +129,68 @@ nav {
   color: #333;
 }
 
+.logout {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.logout:hover {
+  transform: scale(0.97);
+  transition: all 0.3s ease;
+}
+
 .operation--task {
-  grid-row: 1 / span 2;
+  order: 1;
   background-image: linear-gradient(to top left, #ffb003, #ffcb03);
 }
 
-.operation--close {
-  grid-row: 3 / span 2;
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
-}
-
 h2 {
-  margin-bottom: 1.5rem;
   font-size: 1.7rem;
   font-weight: 600;
   color: #333;
 }
 
+.operation--task .form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+}
+
+.operation--task .form__input {
+  margin: 1rem 0 0.6rem 0;
+}
+.operation--task .form__input:nth-of-type(1) {
+  margin-top: 2rem;
+  height: 3.5vh;
+  grid-column: 1 / span 5;
+}
+.operation--task label:nth-of-type(1) {
+  margin-right: 40px;
+  grid-column: 1 / span 5;
+}
+.operation--task input[type="date"] {
+  margin-top: 3.5rem;
+  grid-column: 1 / span 4;
+}
+
+.operation--task .form__btn {
+  margin: 3.5rem 0 0.5rem 0;
+  padding: 0.5rem;
+}
+
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0.4rem 1rem;
 }
 
 .form__input {
-  margin: 2rem 0 0.8rem 0;
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
@@ -155,21 +208,87 @@ h2 {
 }
 
 .form__label {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 .form__btn {
-  margin: 2rem 0;
   border: none;
   border-radius: 0.7rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   background-color: #fff;
   cursor: pointer;
-  padding: 4px;
 }
 
 .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.task--update, .task--delete{
+  font-size: 1.2rem;
+  border: 2px solid #333;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+
+
+
+
+@media screen and (min-width: 640px) and (max-width: 1032px) {
+  nav {
+    max-width: 100%;
+  }
+  .welcome {
+    font-size: 1.7rem;
+  }
+  .logo {
+    height: 5rem;
+  }
+  .login__input {
+    font-size: 1.6rem;
+    width: 8rem;
+  }
+
+  .app {
+    max-width: 60rem;
+  }
+
+  .tasks {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 639px) {
+  nav {
+    max-width: 100%;
+  }
+  .welcome {
+    font-size: 1.5rem;
+  }
+  .logo {
+    height: 4rem;
+  }
+
+  .app {
+    max-width: 40rem;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  nav img {
+    display: none;
+  }
+  nav {
+    max-width: 100%;
+  }
+  .welcome {
+    font-size: 1.5rem;
+  }
+
+  .app {
+    max-width: 40rem;
+  }
 }
