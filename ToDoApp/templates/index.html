@@ -21,45 +21,27 @@
     <!-- TOP NAVIGATION -->
     <nav>
       <p class="welcome">welcome back, {{current_user}}</p>
-      <img
-        src="https://media.giphy.com/media/dSCrlEYBUjNWbgksWJ/giphy.gif"
-        alt="Logo"
-        class="logo"
-      />
+      <div>
+      <a href="{{url_for('logout')}}" class ="btn--logout">Logout</a>
+    
+      {%block button%}{%endblock%}
+      </div>
 
-      <button class="logout"><a href="{{url_for('logout')}}" class ="">Logout</a></button>
     </nav>
 
     <main class="app">
       <!-- TASKS -->
       <div class="tasks">
-
-        {% block content %}{% endblock %}
-        
+      {%block name%}{%endblock%}
+      {% block content %}{% endblock %}
+       
       </div>
 
       <!-- OPERATION: TASK -->
 
       {% block task%}{%endblock%}
-      
-      <!-- <div class="operation operation--task">
-        
-        <h2>Schedule Task</h2>
-        <form action="" class="form form--task" method="POST">
-          <input
-            type="text"
-            id="task"
-            class="form__input form__input--discription"
-            name ="taskdes"
-            required
-          />
-          <label class="form__label" for="task">Task Discription</label>
 
-          <input type="date" id="date" class="form__input form__input--date" name ="date"  required/>
-
-          <button class="form__btn form__btn--task">&rarr;</button>
-        </form>
-      </div> -->
+      {%block sort%}{%endblock%}
     </main>
     <script src="index.js"></script>
   </body>

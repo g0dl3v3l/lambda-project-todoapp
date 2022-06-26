@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_home.css') }}" />
+    <title>Daily Task</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <i class="fa-regular fa-circle-check"></i>
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn" href="{{url_for('login')}}">Open account</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <h1>
+          Organize your work <br />
+          and life
+        </h1>
+        <h4>A simpler task scheduler for a simpler life.</h4>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+        <img src="{{url_for('static', filename='organized.jpg')}}" class="header__img" alt="todo-item" />
+      </div>
+    </header>
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Features</h2>
+        <h3 class="section__header">
+          Everything you need in a simple task scheduler and more.
+        </h3>
+      </div>
+
+      <div class="features">
+        <img src="{{url_for('static', filename='feature1.jpeg')}}" class="features__img" />
+        <div class="features__feature">
+          <div class="features__icon"></div>
+          <h5 class="features__header">Schedule</h5>
+          <p>
+            This application has a simple user interface where the user can
+            enter the task discription and also the date at which the task to be
+            completed.
+          </p>
+        </div>
+
+        <div class="features__feature">
+          <div class="features__icon"></div>
+          <h5 class="features__header">Sort</h5>
+          <p>
+            This application has a sort filter which can filter all the tasks
+            corresponding to the user selected date.
+          </p>
+        </div>
+        <img src="{{url_for('static', filename='feature2.jpeg')}}" class="features__img" />
+        <img
+        src="{{url_for('static', filename='feature3.jpeg')}}"
+        
+          alt="Credit card"
+          class="features__img"
+        />
+        <div class="features__feature">
+          <div class="features__icon"></div>
+          <h5 class="features__header">Update</h5>
+          <p>
+            All the scheduled tasks can be updated as the user wishes and any
+            task can be removed by simply clicking delete button.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Pricing</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Careers</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <i class="fa-regular fa-circle-check"></i>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

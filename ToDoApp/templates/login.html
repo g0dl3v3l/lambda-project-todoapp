@@ -17,7 +17,8 @@
         type = "text" 
         placeholder = "Username"
         required
-        name = "users" 
+        name = "users"
+        autocomplete="off" 
         />
         <input 
         class="username"
@@ -25,10 +26,11 @@
         placeholder = "Password"
         required
         name = "pwd" 
+        autocomplete="off" 
         />
         <div class="buttons">
         <button type = "submit" class="button">Login</button>
-       <button class="button"><a href="{{url_for('register')}}" class="button" name="">Sign up</a></button>
+       <a href="{{url_for('register')}}" class="button" name="">Sign up</a>
         </div>
     </div>
     </form>

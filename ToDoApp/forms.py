@@ -16,5 +16,6 @@ class UserForm(FlaskForm):
 class EditForm(FlaskForm):
     edittask = StringField()
     editdate = DateField('date' ,format='%Y-%m-%d')
+    sortdate  =DateField('date' ,format='%Y-%m-%d')
     submit = SubmitField('Update')
 

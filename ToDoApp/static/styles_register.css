@@ -13,17 +13,17 @@ a {
 
 .container {
   position: absolute;
-  top: 15%;
-  bottom: 15%;
-  left: 32.5%;
-  right: 32.5%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
   display: flex;
+  height: 70%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  padding: 200px 150px;
+  padding: 200px 80px;
 }
 
 .container .loginForm {
@@ -37,9 +37,8 @@ body {
 }
 
 .bg-image {
-  background-image: url('book1.jpg');
-  filter: blur(8px); 
-  filter: blur(8px);
+  background-image: url('login--imge.jpg');
+  filter: blur(4px); 
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,7 +62,7 @@ body {
   color: #fff;
   width: 100%;
   background-image: linear-gradient(to left bottom, #42c2ff, #1363df);
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.5rem 0;
   margin: 2rem 0 0 0;
   border-radius: 4px;
@@ -97,24 +96,3 @@ p {
   margin-bottom: 1.2rem;
 }
 
-@media screen and (max-width: 1180px) {
-  .container {
-    top: 15%;
-    bottom: 15%;
-    left: 22.5%;
-    right: 22.5%;
-  }
-}
-
-@media screen and (max-width: 820px) {
-  .container {
-    top: 15%;
-    bottom: 15%;
-    left: 12.5%;
-    right: 12.5%;
-    height: 48%;
-  }
-  .loginForm {
-    width: 18rem;
-  }
-}

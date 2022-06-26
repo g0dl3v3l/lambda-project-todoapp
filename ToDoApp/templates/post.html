@@ -5,12 +5,16 @@
 
     {%extends 'index.html'%}
 
+{% block name %}
+<h1 class="Scheduled">Scheduled Tasks</h1>
+{%endblock name%}
     
     {% block content %}
         {%for post in display%}
             <div class="task">
               <a href="{{url_for('displaypage', taskdata_id = post.id)}}"  class="task__discription"><div >{{post.taskdes}}</div></a>
                 <div class="task__time--end">{{post.date}}</div>   
+                <!-- <div>{{str1}}</div> -->
             </div>
         {%endfor%}
 
@@ -22,7 +26,7 @@
     {%block task%}
         <div class="operation operation--task">
             
-            <h2>Schedule Task</h2>
+            <h2 class="schedule">Schedule Task</h2>
             <form action="" class="form form--task" method="POST">
             <input
                 type="text"
@@ -38,7 +42,19 @@
             <button class="form__btn form__btn--task">&rarr;</button>
             </form>
         </div>
+
+
+
+        
       {%endblock task%}
 
+
+      {%block button%}
+            <a href="{{url_for('sort_task')}}" class ="btn--sort">Sort</a>
+      {%endblock button%}
+
+
+
+     
        
     

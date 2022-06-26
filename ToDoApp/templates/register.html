@@ -14,33 +14,9 @@
         <form class = "loginForm" method = "POST">
         {{ form.hidden_tag() }}
         <p>Create new account</p>
-        <!-- <input type="email" placeholder="Email" required> -->
-        {{ form.email(class="form__input--discription", placeholder="Email") }}
-
-       
-
-        {{ form.username(class="form__input--discription" , placeholder ="Username") }}
-
-        <!-- <input class="username"
-        type = "text" 
-        placeholder = "Username"
-        required
-        /> -->
-
-
-
-        <!-- <input 
-        class="username"
-        type = "password" 
-        placeholder = "Password"
-        minlength="4"
-        required
-        /> -->
-
-        
-        {{ form.password(class="form__input--discription" , placeholder="Password") }}
-        <!-- <button class="button">Sign up</button> -->
-
+        {{ form.email(class="form__input--discription", placeholder="Email", autocomplete="off" ) }}
+        {{ form.username(class="form__input--discription" , placeholder ="Username", autocomplete="off" ) }}
+        {{ form.password(class="form__input--discription" , placeholder="Password", autocomplete="off" ) }}
         {{ form.submit(class="form__btn--close") }}
         </div>
         </form>

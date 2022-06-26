@@ -2,6 +2,10 @@
 
 {%extends 'index.html'%}
 
+{% block name %}
+<h1 class="Scheduled">Save Updated Tasks</h1>
+{%endblock name%}
+
     {% block content %}
         <div class="task__edit">
             <form  method = "POST" action="" class="form form--task" >
@@ -22,3 +26,7 @@
         </form>
         </div>
     {%endblock content%}
+
+    {%block button%}
+    <button class="btn--logout"><a href="{{url_for('home')}}" class ="">Home</a></button>
+  {%endblock button%}

@@ -1,0 +1,43 @@
+{%extends 'index.html'%}
+
+    
+    {% block content %}
+        {%for post in display%}
+            <div class="task">
+              <a href="{{url_for('displaypage', taskdata_id = post.id)}}"  class="task__discription"><div >{{post.taskdes}}</div></a>
+                <div class="task__time--end">{{post.date}}</div>   
+            </div>
+
+            
+        {%endfor%}
+        
+        {%endblock content%}
+
+
+
+
+        {%block sort%}
+
+        <div class="operation operation--task">
+              
+           <h2 class="schedule">Sort Tasks</h2>
+            <form action="" class="form form--task" method="POST">
+           
+           
+
+            <input type="date" id="date" class="form__input form__input--date" name ="sort_date"  required/>
+
+            <button class="form__btn form__btn--task">&rarr;</button>
+          </form>
+      </div>
+          
+        {%endblock sort%}    
+  
+
+
+    {%block button%}
+      <a href="{{url_for('home')}}" class ="btn--logout">Home</a>
+    {%endblock button%}
+
+         
+      

@@ -3,10 +3,13 @@
 
 
 {%extends 'index.html'%}
+{% block name %}
+<h1 class="Scheduled">Update Tasks</h1>
+{%endblock name%}
 
     {% block content %}
         <!--This block displays the tasks-->
-        <div class="task">
+        <div class="task tasks--update">
             <div class="task__discription" >{{editTask.taskdes}}</div>
             <div class="task__time--end">{{editTask.date}}</div>
             <div>
@@ -19,3 +22,8 @@
         <!-- this block takes the task discription-->
       
     {%endblock content%}
+
+
+    {%block button%}
+    <a href="{{url_for('home')}}" class ="btn--logout">Home</a>
+  {%endblock button%}
