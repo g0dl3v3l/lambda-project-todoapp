@@ -242,8 +242,9 @@ h2 {
 
 /* update */
 
-tasks--update{
-  flex-direction: column;
+.display--text {
+ background-color:rgba(0, 0, 0, 0.2);
+ border-radius: 10rem;
 }
 
 

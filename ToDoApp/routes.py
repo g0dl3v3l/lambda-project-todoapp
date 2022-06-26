@@ -15,8 +15,8 @@ db.create_all()
 
 data_sort = [] # to store the task date for sorting.
 
-def reverse(str):
-    return str[8:]+'-'+str[5:7] +'-'+ str[0:4]
+# def reverse(str):
+#     return str[8:]+'-'+str[5:7] +'-'+ str[0:4]
 # def reverse(str):
 #      return str
 
@@ -95,7 +95,7 @@ def add_task():
     task = Taskdata(taskdes = request.form.get('taskdes'), date = request.form.get('date'), user_id=current_user.id)  # creating of a data entries for a perticular task 
     
 
-    task.date = reverse (task.date)
+    
 
     if task.taskdes != '' and task.date != '':
         db.session.add(task)
