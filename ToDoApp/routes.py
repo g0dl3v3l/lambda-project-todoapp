@@ -133,7 +133,7 @@ def edit(taskdata_id):
 
     if form.validate_on_submit():
         editTasks.taskdes = form.edittask.data
-        editTasks.date = reverse(request.form.get('taskdate'))
+        editTasks.date = request.form.get('taskdate')
         db.session.commit()
         # taskdata_id = editTasks.id)
         return redirect(url_for('home'))
